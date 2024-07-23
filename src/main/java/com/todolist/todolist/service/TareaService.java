@@ -75,11 +75,12 @@ public class TareaService implements ITareaService {
     @Override
     public void cambiarEstado(Long id_tarea) {
         Tarea tarea = this.traerTarea(id_tarea);
-        if (tarea.getEstadoTarea()) {
+        if (tarea.getEstadoTarea() == true) {
             tarea.setEstadoTarea(false);
         } else {
             tarea.setEstadoTarea(true);
         }
+        this.crearTarea(tarea);
     }
 
 }
